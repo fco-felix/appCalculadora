@@ -1,0 +1,233 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 32744 bytes for ChunkPool::allocate
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (allocation.cpp:272), pid=604, tid=0x00000000000008fc
+#
+# JRE version: OpenJDK Runtime Environment (8.0_242-b01) (build 1.8.0_242-release-1644-b01)
+# Java VM: OpenJDK 64-Bit Server VM (25.242-b01 mixed mode windows-amd64 compressed oops)
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0000000000aee000):  JavaThread "main" [_thread_in_vm, id=2300, stack(0x0000000002270000,0x0000000002370000)]
+
+Stack: [0x0000000002270000,0x0000000002370000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  sun.misc.Unsafe.defineAnonymousClass(Ljava/lang/Class;[B[Ljava/lang/Object;)Ljava/lang/Class;+0
+j  java.lang.invoke.InvokerBytecodeGenerator.loadAndInitializeInvokerClass([B[Ljava/lang/Object;)Ljava/lang/Class;+8
+j  java.lang.invoke.InvokerBytecodeGenerator.loadMethod([B)Ljava/lang/invoke/MemberName;+6
+j  java.lang.invoke.InvokerBytecodeGenerator.generateCustomizedCode(Ljava/lang/invoke/LambdaForm;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MemberName;+17
+j  java.lang.invoke.LambdaForm.compileToBytecode()Ljava/lang/invoke/MemberName;+65
+j  java.lang.invoke.DirectMethodHandle.makePreparedLambdaForm(Ljava/lang/invoke/MethodType;I)Ljava/lang/invoke/LambdaForm;+713
+j  java.lang.invoke.DirectMethodHandle.preparedLambdaForm(Ljava/lang/invoke/MethodType;I)Ljava/lang/invoke/LambdaForm;+17
+j  java.lang.invoke.DirectMethodHandle.preparedLambdaForm(Ljava/lang/invoke/MemberName;)Ljava/lang/invoke/LambdaForm;+151
+j  java.lang.invoke.DirectMethodHandle.make(BLjava/lang/Class;Ljava/lang/invoke/MemberName;)Ljava/lang/invoke/DirectMethodHandle;+137
+j  java.lang.invoke.DirectMethodHandle.make(Ljava/lang/Class;Ljava/lang/invoke/MemberName;)Ljava/lang/invoke/DirectMethodHandle;+16
+j  java.lang.invoke.DirectMethodHandle.make(Ljava/lang/invoke/MemberName;)Ljava/lang/invoke/DirectMethodHandle;+17
+j  java.lang.invoke.LambdaForm$NamedFunction.resolve()V+5
+j  java.lang.invoke.MethodHandleImpl$Lazy.<clinit>()V+155
+v  ~StubRoutines::call_stub
+j  java.lang.invoke.MethodHandleImpl.varargsArray(I)Ljava/lang/invoke/MethodHandle;+0
+j  java.lang.invoke.MethodHandleImpl.varargsArray(Ljava/lang/Class;I)Ljava/lang/invoke/MethodHandle;+121
+j  java.lang.invoke.MethodHandle.asCollector(Ljava/lang/Class;I)Ljava/lang/invoke/MethodHandle;+36
+j  java.lang.invoke.MethodHandleImpl$AsVarargsCollector.<init>(Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/Class;)V+20
+j  java.lang.invoke.MethodHandleImpl$AsVarargsCollector.<init>(Ljava/lang/invoke/MethodHandle;Ljava/lang/Class;)V+7
+j  java.lang.invoke.MethodHandleImpl.makeVarargsCollector(Ljava/lang/invoke/MethodHandle;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;+43
+j  java.lang.invoke.MethodHandle.setVarargs(Ljava/lang/invoke/MemberName;)Ljava/lang/invoke/MethodHandle;+26
+j  java.lang.invoke.MethodHandles$Lookup.getDirectMethodCommon(BLjava/lang/Class;Ljava/lang/invoke/MemberName;ZZLjava/lang/Class;)Ljava/lang/invoke/MethodHandle;+263
+j  java.lang.invoke.MethodHandles$Lookup.getDirectMethod(BLjava/lang/Class;Ljava/lang/invoke/MemberName;Ljava/lang/Class;)Ljava/lang/invoke/MethodHandle;+8
+j  java.lang.invoke.MethodHandles$Lookup.findStatic(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/MethodHandle;+23
+j  java.lang.invoke.CallSite.<clinit>()V+35
+v  ~StubRoutines::call_stub
+j  java.lang.invoke.MethodHandleNatives.linkCallSiteImpl(Ljava/lang/Class;Ljava/lang/invoke/MethodHandle;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/invoke/MemberName;+6
+j  java.lang.invoke.MethodHandleNatives.linkCallSite(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/invoke/MemberName;+45
+v  ~StubRoutines::call_stub
+j  org.jetbrains.kotlin.com.intellij.openapi.diagnostic.Logger.<clinit>()V+11
+v  ~StubRoutines::call_stub
+j  org.jetbrains.kotlin.com.intellij.openapi.util.text.StringUtil.<clinit>()V+18
+v  ~StubRoutines::call_stub
+j  org.jetbrains.kotlin.com.intellij.openapi.util.SystemInfo.<clinit>()V+108
+v  ~StubRoutines::call_stub
+j  org.jetbrains.kotlin.cli.common.messages.PlainTextMessageRenderer.<clinit>()V+2
+v  ~StubRoutines::call_stub
+j  org.jetbrains.kotlin.cli.common.messages.MessageRenderer.<clinit>()V+10
+v  ~StubRoutines::call_stub
+j  org.jetbrains.kotlin.cli.common.CLITool$Companion.defaultMessageRenderer()Lorg/jetbrains/kotlin/cli/common/messages/MessageRenderer;+7
+j  org.jetbrains.kotlin.cli.common.CLITool$Companion.doMainNoExit$default(Lorg/jetbrains/kotlin/cli/common/CLITool$Companion;Lorg/jetbrains/kotlin/cli/common/CLITool;[Ljava/lang/String;Lorg/jetbrains/kotlin/cli/common/messages/MessageRenderer;ILjava/lang/Object;)Lorg/jetbrains/kotlin/cli/common/ExitCode;+8
+j  org.jetbrains.kotlin.cli.common.CLITool$Companion.doMain(Lorg/jetbrains/kotlin/cli/common/CLITool;[Ljava/lang/String;)V+56
+j  org.jetbrains.kotlin.cli.jvm.K2JVMCompiler$Companion.main([Ljava/lang/String;)V+20
+j  org.jetbrains.kotlin.cli.jvm.K2JVMCompiler.main([Ljava/lang/String;)V+4
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x000000001aea3800 JavaThread "Service Thread" daemon [_thread_blocked, id=6684, stack(0x000000001b270000,0x000000001b370000)]
+  0x0000000019544000 JavaThread "C1 CompilerThread2" daemon [_thread_in_vm, id=2120, stack(0x000000001ad70000,0x000000001ae70000)]
+  0x000000001953e800 JavaThread "C2 CompilerThread1" daemon [_thread_in_native, id=3384, stack(0x000000001ac70000,0x000000001ad70000)]
+  0x0000000019536800 JavaThread "C2 CompilerThread0" daemon [_thread_blocked, id=4736, stack(0x000000001ab70000,0x000000001ac70000)]
+  0x0000000019533000 JavaThread "Attach Listener" daemon [_thread_blocked, id=1928, stack(0x000000001aa70000,0x000000001ab70000)]
+  0x0000000019532000 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=6040, stack(0x000000001a970000,0x000000001aa70000)]
+  0x00000000024bb000 JavaThread "Finalizer" daemon [_thread_blocked, id=1776, stack(0x000000001a780000,0x000000001a880000)]
+  0x00000000024b2000 JavaThread "Reference Handler" daemon [_thread_blocked, id=5696, stack(0x000000001a680000,0x000000001a780000)]
+=>0x0000000000aee000 JavaThread "main" [_thread_in_vm, id=2300, stack(0x0000000002270000,0x0000000002370000)]
+
+Other Threads:
+  0x00000000194f6800 VMThread [stack: 0x000000001a580000,0x000000001a680000] [id=3432]
+  0x000000001aea5000 WatcherThread [stack: 0x000000001b370000,0x000000001b470000] [id=820]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+heap address: 0x0000000701e00000, size: 3042 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 3
+Compressed class space size: 1073741824 Address: 0x00000007c0000000
+
+Heap:
+ PSYoungGen      total 57344K, used 5052K [0x0000000780a00000, 0x0000000784a00000, 0x00000007c0000000)
+  eden space 49152K, 10% used [0x0000000780a00000,0x0000000780eef368,0x0000000783a00000)
+  from space 8192K, 0% used [0x0000000784200000,0x0000000784200000,0x0000000784a00000)
+  to   space 8192K, 0% used [0x0000000783a00000,0x0000000783a00000,0x0000000784200000)
+ ParOldGen       total 131072K, used 0K [0x0000000701e00000, 0x0000000709e00000, 0x0000000780a00000)
+  object space 131072K, 0% used [0x0000000701e00000,0x0000000701e00000,0x0000000709e00000)
+ Metaspace       used 3958K, capacity 5018K, committed 5120K, reserved 1056768K
+  class space    used 398K, capacity 479K, committed 512K, reserved 1048576K
+
+Card table byte_map: [0x0000000011880000,0x0000000011e80000] byte_map_base: 0x000000000e071000
+
+Marking Bits: (ParMarkBitMap*) 0x000000006182f030
+ Begin Bits: [0x0000000012680000, 0x0000000015608000)
+ End Bits:   [0x0000000015608000, 0x0000000018590000)
+
+Polling page: 0x0000000000a80000
+
+CodeCache: size=245760Kb used=1449Kb max_used=1449Kb free=244310Kb
+ bounds [0x00000000024c0000, 0x0000000002730000, 0x00000000114c0000]
+ total_blobs=478 nmethods=215 adapters=177
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 0.176 Thread 0x0000000019544000  196       3       java.util.AbstractList$Itr::hasNext (20 bytes)
+Event: 0.176 Thread 0x0000000019544000 nmethod 196 0x0000000002618c50 code [0x0000000002618dc0, 0x0000000002619048]
+Event: 0.176 Thread 0x0000000019544000  197       3       java.lang.invoke.MemberName::getInvocationType (56 bytes)
+Event: 0.177 Thread 0x0000000019544000 nmethod 197 0x0000000002619290 code [0x0000000002619480, 0x000000000261a0a8]
+Event: 0.177 Thread 0x0000000019544000  198       3       jdk.internal.org.objectweb.asm.Type::getArgumentsAndReturnSizes (151 bytes)
+Event: 0.177 Thread 0x0000000019544000 nmethod 198 0x000000000261a6d0 code [0x000000000261a900, 0x000000000261b698]
+Event: 0.177 Thread 0x0000000019544000  199       3       java.lang.invoke.InvokerBytecodeGenerator::isStaticallyNameable (116 bytes)
+Event: 0.179 Thread 0x0000000019544000 nmethod 199 0x000000000261c1d0 code [0x000000000261c540, 0x000000000261e678]
+Event: 0.179 Thread 0x0000000019544000  202       3       jdk.internal.org.objectweb.asm.Frame::execute (2252 bytes)
+Event: 0.181 Thread 0x000000001953e800  216       4       jdk.internal.org.objectweb.asm.ByteVector::putUTF8 (142 bytes)
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (4 events):
+Event: 0.030 Thread 0x0000000000aee000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.defineClass(Ljava/lang/String;[BII)Ljava/lang/Class; name or signature does not match> (0x0000000780a07cc8) thrown at [C:\src\AOSP-openjdk-git\hotspot\src\share\vm\prims\jni.cpp, line 4013
+Event: 0.030 Thread 0x0000000000aee000 Exception <a 'java/lang/NoSuchMethodError': Method sun.misc.Unsafe.prefetchRead(Ljava/lang/Object;J)V name or signature does not match> (0x0000000780a07fb0) thrown at [C:\src\AOSP-openjdk-git\hotspot\src\share\vm\prims\jni.cpp, line 4013]
+Event: 0.181 Thread 0x0000000000aee000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x0000000780df5960) thrown at [C:\src\AOSP-openjdk-git\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+Event: 0.184 Thread 0x0000000000aee000 Exception <a 'java/lang/NoSuchFieldError': method resolution failed> (0x0000000780e02fa8) thrown at [C:\src\AOSP-openjdk-git\hotspot\src\share\vm\prims\methodHandles.cpp, line 1167]
+
+Events (10 events):
+Event: 0.164 loading class java/lang/invoke/WrongMethodTypeException
+Event: 0.164 loading class java/lang/invoke/WrongMethodTypeException done
+Event: 0.166 loading class java/lang/invoke/MethodHandleImpl$Lazy
+Event: 0.167 loading class java/lang/invoke/MethodHandleImpl$Lazy done
+Event: 0.167 loading class java/lang/invoke/MethodHandleImpl$IntrinsicMethodHandle
+Event: 0.167 loading class java/lang/invoke/MethodHandleImpl$IntrinsicMethodHandle done
+Event: 0.181 loading class java/lang/NoSuchFieldError
+Event: 0.181 loading class java/lang/NoSuchFieldError done
+Event: 0.181 loading class java/lang/IllegalAccessException
+Event: 0.181 loading class java/lang/IllegalAccessException done
+
+
+Dynamic libraries:
+0x00007ff785b10000 - 0x00007ff785b41000 	C:\Program Files\Android\Android Studio\jre\jre\bin\java.exe
+0x00007ffed2780000 - 0x00007ffed292d000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffed2220000 - 0x00007ffed235f000 	C:\Windows\system32\KERNEL32.DLL
+0x00007ffecfc00000 - 0x00007ffecfd15000 	C:\Windows\system32\KERNELBASE.dll
+0x00007ffed2160000 - 0x00007ffed220a000 	C:\Windows\system32\ADVAPI32.dll
+0x00007ffed0300000 - 0x00007ffed0477000 	C:\Windows\system32\USER32.dll
+0x00007ffecd1f0000 - 0x00007ffecd46b000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.9600.19394_none_62486577ecb635cf\COMCTL32.dll
+0x00007ffed0480000 - 0x00007ffed052a000 	C:\Windows\system32\msvcrt.dll
+0x00007ffed20c0000 - 0x00007ffed2118000 	C:\Windows\SYSTEM32\sechost.dll
+0x00007ffed1e50000 - 0x00007ffed1f90000 	C:\Windows\system32\RPCRT4.dll
+0x00007ffed2580000 - 0x00007ffed26cd000 	C:\Windows\system32\GDI32.dll
+0x00007ffecfd20000 - 0x00007ffecfd4e000 	C:\Windows\system32\SspiCli.dll
+0x00007ffed2120000 - 0x00007ffed2156000 	C:\Windows\system32\IMM32.DLL
+0x00007ffecfe00000 - 0x00007ffecff51000 	C:\Windows\system32\MSCTF.dll
+0x0000000060510000 - 0x00000000605e2000 	C:\Program Files\Android\Android Studio\jre\jre\bin\msvcr100.dll
+0x0000000061060000 - 0x00000000618ab000 	C:\Program Files\Android\Android Studio\jre\jre\bin\server\jvm.dll
+0x00007ffec4320000 - 0x00007ffec4329000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffeca3f0000 - 0x00007ffeca412000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffecd470000 - 0x00007ffecd47a000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffed26e0000 - 0x00007ffed26e7000 	C:\Windows\system32\PSAPI.DLL
+0x00007ffed02a0000 - 0x00007ffed02fa000 	C:\Windows\system32\WS2_32.dll
+0x00007ffeca3c0000 - 0x00007ffeca3ea000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffed26d0000 - 0x00007ffed26d9000 	C:\Windows\system32\NSI.dll
+0x00007ffecf9d0000 - 0x00007ffecfa1f000 	C:\Windows\SYSTEM32\cfgmgr32.dll
+0x00007ffece6d0000 - 0x00007ffece6f8000 	C:\Windows\SYSTEM32\DEVOBJ.dll
+0x00007ffec0830000 - 0x00007ffec083f000 	C:\Program Files\Android\Android Studio\jre\jre\bin\verify.dll
+0x00007ffeb61a0000 - 0x00007ffeb61c9000 	C:\Program Files\Android\Android Studio\jre\jre\bin\java.dll
+0x00007ffeb5c50000 - 0x00007ffeb5c66000 	C:\Program Files\Android\Android Studio\jre\jre\bin\zip.dll
+0x00007ffed0540000 - 0x00007ffed1a6e000 	C:\Windows\system32\SHELL32.dll
+0x00007ffed2360000 - 0x00007ffed2571000 	C:\Windows\SYSTEM32\combase.dll
+0x00007ffed1f90000 - 0x00007ffed1fe4000 	C:\Windows\system32\SHLWAPI.dll
+0x00007ffecdc10000 - 0x00007ffecdcc2000 	C:\Windows\SYSTEM32\SHCORE.dll
+0x00007ffecf8a0000 - 0x00007ffecf8b5000 	C:\Windows\SYSTEM32\profapi.dll
+
+VM Arguments:
+java_command: org.jetbrains.kotlin.cli.jvm.K2JVMCompiler @C:\Users\FranciscoFelix\AndroidStudioProjects\Calculadora\app\build\20201030_6802160062059407986.compiler.options
+java_class_path (initial): C:\Users\FranciscoFelix\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-compiler-embeddable\1.4.10\38c4b99d5d5362debdd9302a866730379aa2328a\kotlin-compiler-embeddable-1.4.10.jar;C:\Users\FranciscoFelix\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-reflect\1.4.10\e2b3c6695eee6085e606d96d685396dce23a3a06\kotlin-reflect-1.4.10.jar;C:\Users\FranciscoFelix\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.4.10\ea29e063d2bbe695be13e9d044dcfb0c7add398e\kotlin-stdlib-1.4.10.jar;C:\Users\FranciscoFelix\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-script-runtime\1.4.10\7c19d9c2001e016cd7664cebe9eea66fc04a7f4f\kotlin-script-runtime-1.4.10.jar;C:\Users\FranciscoFelix\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-daemon-embeddable\1.4.10\dbd67f42bed28043d17d7c860b06110a00a45970\kotlin-daemon-embeddable-1.4.10.jar;C:\Users\FranciscoFelix\.gradle\caches\modules-2\files-2.1\org.jetbrains.intellij.deps\trove4j\1.0.20181211\216c2e14b070f334479d800987affe4054cd563f\trove4j-1.0.20181211.jar;C:\Users\FranciscoFelix\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-common\1.4.10\6229be3465805c99db1142ad75e6c6ddeac0b04c\kotlin-stdlib-common-1.4.10.jar;C:\Users\FranciscoFelix\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar;C:\Program Files\Android\Android Studio\jre\lib\tools.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\PROGRA~2\Borland\Delphi6\Bin;C:\PROGRA~2\Borland\Delphi6\Projects\Bpl;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;;C:\Users\FranciscoFelix\AppData\Local\Programs\Microsoft VS Code\bin
+USERNAME=FranciscoFelix
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 8.1 , 64 bit Build 9600 (6.3.9600.19843)
+
+CPU:total 4 (initial active 4) (2 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, physical 12459288k(1897476k free), swap 12459288k(5104k free)
+
+vm_info: OpenJDK 64-Bit Server VM (25.242-b01) for windows-amd64 JRE (1.8.0_242-release-1644-b01), built by "builder" with MS VC++ 10.0 (VS2010)
+
+time: Fri Oct 30 15:17:03 2020
+timezone: Hora oficial do Brasil
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
